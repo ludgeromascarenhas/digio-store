@@ -153,7 +153,6 @@
 				40FF4901E50B2F54570C65E7 /* Pods-DigioStoreTests.debug.xcconfig */,
 				A6AD7974EB8E96C0BAE3AD36 /* Pods-DigioStoreTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -165,6 +164,7 @@
 			buildConfigurationList = 6DB76456291B115100156D1B /* Build configuration list for PBXNativeTarget "DigioStore" */;
 			buildPhases = (
 				76D945923FCFDC7886EFE941 /* [CP] Check Pods Manifest.lock */,
+				6D26D622291C700C00527985 /* SwiftLint */,
 				6DB76428291B114E00156D1B /* Sources */,
 				6DB76429291B114E00156D1B /* Frameworks */,
 				6DB7642A291B114E00156D1B /* Resources */,
@@ -286,6 +286,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6D26D622291C700C00527985 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		76D945923FCFDC7886EFE941 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
