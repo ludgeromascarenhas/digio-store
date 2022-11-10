@@ -1,8 +1,14 @@
 import Foundation
 
+// MARK - StoreServiceProtocol
+
+protocol StoreServiceProtocol: AnyObject {
+  func fetchStore(completion: @escaping (Result<Store, ResponseError>) -> Void)
+}
+
 // MARK: - StoreService
 
-final class StoreService {
+final class StoreService: StoreServiceProtocol {
   
   // MARK: - Private variables
   

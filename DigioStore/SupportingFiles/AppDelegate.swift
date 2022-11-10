@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let navigationController = UINavigationController()
     
-    let viewController = StoreViewController()
+    let viewModel = StoreViewModel()
+    let viewController = StoreViewController(viewModel: viewModel)
     navigationController.pushViewController(viewController, animated: true)
     
     window = UIWindow()
