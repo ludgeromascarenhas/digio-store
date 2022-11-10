@@ -2,13 +2,19 @@ import UIKit
 
 // MARK: - StoreViewController
 
-class StoreViewController: UIViewController {
+class StoreViewController: BaseViewController<StoreView> {
+  
+  // MARK: - Override methods
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor.red
     testRequest()
   }
+}
+
+// MARK: - Internal methods
+
+extension StoreViewController {
   
   func testRequest() {
     let service = StoreService()

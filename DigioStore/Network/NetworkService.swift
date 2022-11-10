@@ -81,27 +81,27 @@ extension NetworkService {
   }
   
   func createGenericError() -> ResponseError {
-      return ResponseError(title: "Erro", detail: "Desculpe, algo de errado aconteceu")
+    return ResponseError(title: "Erro", detail: "Desculpe, algo de errado aconteceu")
   }
   
   func errorHandler(by data: Data?) -> ResponseError {
-      if let data = data {
-          do {
-              let error = try JSONDecoder().decode(ResponseError.self, from: data)
-              return error
-          } catch {
-              do {
-                  let notFoundError = try JSONDecoder().decode(ResponseNotFound.self, from: data)
-                  let error = ResponseError(title: notFoundError.errors.first?.title ?? "Erro",
-                                            detail: notFoundError.errors.first?.detail ?? "Erro de parse")
-                  return error
-              } catch {
-                  return createGenericError()
-              }
-          }
-      } else {
+    if let data = data {
+      do {
+        let error = try JSONDecoder().decode(ResponseError.self, from: data)
+        return error
+      } catch {
+        do {
+          let notFoundError = try JSONDecoder().decode(ResponseNotFound.self, from: data)
+          let error = ResponseError(title: notFoundError.errors.first?.title ?? "Erro",
+                                    detail: notFoundError.errors.first?.detail ?? "Erro de parse")
+          return error
+        } catch {
           return createGenericError()
+        }
       }
+    } else {
+      return createGenericError()
+    }
   }
 }
 
