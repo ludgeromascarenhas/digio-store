@@ -13,11 +13,13 @@ final class StoreViewModel: StoreViewModelProtocol {
   // MARK: - Private variables
   
   private let service: StoreServiceProtocol
+  private let coordinator: StoreCoordinatorProtocol
   
   // MARK: - Initializers
   
-  init(service: StoreServiceProtocol = StoreService()) {
+  init(service: StoreServiceProtocol = StoreService(), coordinator: StoreCoordinatorProtocol) {
     self.service = service
+    self.coordinator = coordinator
   }
 }
 

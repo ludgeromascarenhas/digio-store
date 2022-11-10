@@ -22,6 +22,8 @@
 		6DEA4881291D979700D847BB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA4880291D979700D847BB /* BaseViewController.swift */; };
 		6DEA4883291D97FF00D847BB /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA4882291D97FF00D847BB /* StoreView.swift */; };
 		6DEA4885291D99E700D847BB /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA4884291D99E700D847BB /* StoreViewModel.swift */; };
+		6DEA4888291D9E0C00D847BB /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA4887291D9E0C00D847BB /* CoordinatorProtocol.swift */; };
+		6DEA488A291D9EBF00D847BB /* StoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA4889291D9EBF00D847BB /* StoreCoordinator.swift */; };
 		C2421201856A8F6D4487960F /* Pods_DigioStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D24747BE43B4C5F0FC4FD5 /* Pods_DigioStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		6DEA4880291D979700D847BB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6DEA4882291D97FF00D847BB /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		6DEA4884291D99E700D847BB /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
+		6DEA4887291D9E0C00D847BB /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		6DEA4889291D9EBF00D847BB /* StoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCoordinator.swift; sourceTree = "<group>"; };
 		7E84E958B56E07803554BA40 /* Pods-DigioStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStore.debug.xcconfig"; path = "Target Support Files/Pods-DigioStore/Pods-DigioStore.debug.xcconfig"; sourceTree = "<group>"; };
 		A6AD7974EB8E96C0BAE3AD36 /* Pods-DigioStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStoreTests.release.xcconfig"; path = "Target Support Files/Pods-DigioStoreTests/Pods-DigioStoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		E7537297166381F35A053D31 /* Pods-DigioStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStore.release.xcconfig"; path = "Target Support Files/Pods-DigioStore/Pods-DigioStore.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				6DB76433291B114E00156D1B /* StoreViewController.swift */,
 				6DEA4875291D6CE600D847BB /* StoreService.swift */,
 				6DEA4884291D99E700D847BB /* StoreViewModel.swift */,
+				6DEA4889291D9EBF00D847BB /* StoreCoordinator.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 		6DEA487E291D977800D847BB /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				6DEA4886291D9DF200D847BB /* Coordinator */,
 				6DEA487F291D978200D847BB /* BaseViewController */,
 			);
 			path = Commons;
@@ -209,6 +215,14 @@
 				6DEA4880291D979700D847BB /* BaseViewController.swift */,
 			);
 			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		6DEA4886291D9DF200D847BB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6DEA4887291D9E0C00D847BB /* CoordinatorProtocol.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		DCB4BAD265CDD22663FA9B83 /* Pods */ = {
@@ -422,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEA488A291D9EBF00D847BB /* StoreCoordinator.swift in Sources */,
 				6DEA4885291D99E700D847BB /* StoreViewModel.swift in Sources */,
 				6DEA487B291D920500D847BB /* BaseRequestProtocol.swift in Sources */,
 				6DB76434291B114E00156D1B /* StoreViewController.swift in Sources */,
@@ -430,6 +445,7 @@
 				6DB76430291B114E00156D1B /* AppDelegate.swift in Sources */,
 				6DEA4883291D97FF00D847BB /* StoreView.swift in Sources */,
 				6DEA4881291D979700D847BB /* BaseViewController.swift in Sources */,
+				6DEA4888291D9E0C00D847BB /* CoordinatorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
