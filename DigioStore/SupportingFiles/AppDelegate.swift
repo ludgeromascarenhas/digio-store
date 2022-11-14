@@ -1,6 +1,6 @@
 import UIKit
 
-// MARK: - Class
+// MARK: - AppDelegate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let navigationController = UINavigationController()
     
-    let coordinator: StoreCoordinatorProtocol = StoreCoordinator(navigationController: navigationController)
+    let coordinator = StoreCoordinator(navigationController: navigationController)
     coordinator.start()
     
     window = UIWindow()

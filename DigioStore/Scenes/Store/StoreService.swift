@@ -1,6 +1,6 @@
 import Foundation
 
-// MARK - StoreServiceProtocol
+// MARK: - StoreServiceProtocol
 
 protocol StoreServiceProtocol: AnyObject {
   func fetchStore(completion: @escaping (Result<Store, ResponseError>) -> Void)
@@ -46,31 +46,31 @@ struct TesteRequest: BaseRequestProtocol {
 // MARK: - Store
 
 struct Store: Decodable {
-  let spotlight: [Spotlight]
-  let products: [Product]
-  let cash: Cash
+  let spotlight: [Spotlight]?
+  let products: [Product]?
+  let cash: Cash?
 }
 
 // MARK: - Cash
 
 struct Cash: Decodable {
-  let title: String
-  let bannerURL: String
-  let description: String
+  let title: String?
+  let bannerURL: String?
+  let description: String?
 }
 
 // MARK: - Product
 
 struct Product: Decodable {
-  let name: String
-  let imageURL: String
-  let description: String
+  let name: String?
+  let imageURL: String?
+  let description: String?
 }
 
 // MARK: - Spotlight
 
 struct Spotlight: Decodable {
-  let name: String
-  let bannerURL: String
-  let description: String
+  let name: String?
+  let bannerURL: String?
+  let description: String?
 }
