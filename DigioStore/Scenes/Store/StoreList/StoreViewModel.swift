@@ -136,9 +136,9 @@ enum StoreSectionType {
   var title: String {
     switch self {
     case .cashDigio:
-      return "digio Cash"
+      return DSStrings.digioCash
     case .products:
-      return "Produtos"
+      return DSStrings.products
     default: return String()
     }
   }

@@ -81,7 +81,8 @@ extension NetworkService {
   }
   
   func createGenericError() -> ResponseError {
-    return ResponseError(title: "Erro", detail: "Desculpe, algo de errado aconteceu")
+    return ResponseError(title: DSStrings.error,
+                         detail: DSStrings.somethingWrong)
   }
   
   func errorHandler(by data: Data?) -> ResponseError {
@@ -92,8 +93,8 @@ extension NetworkService {
       } catch {
         do {
           let notFoundError = try JSONDecoder().decode(ResponseNotFound.self, from: data)
-          let error = ResponseError(title: notFoundError.errors.first?.title ?? "Erro",
-                                    detail: notFoundError.errors.first?.detail ?? "Erro de parse")
+          let error = ResponseError(title: notFoundError.errors.first?.title ?? DSStrings.error,
+                                    detail: notFoundError.errors.first?.detail ?? DSStrings.parserError)
           return error
         } catch {
           return createGenericError()

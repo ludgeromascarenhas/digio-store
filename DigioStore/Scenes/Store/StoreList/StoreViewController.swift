@@ -23,7 +23,7 @@ final class StoreViewController: BaseViewController<StoreView> {
     customView.tableView.delegate = self
     customView.showLoading()
     viewModel.fetchStore()
-    title = "Digio Store"
+    title = DSStrings.digioStore
   }
 }
 

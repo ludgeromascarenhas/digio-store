@@ -11,7 +11,7 @@ final class SectionView: UIView {
     $0.numberOfLines = 1
     $0.textAlignment = .left
     $0.font = .boldSystemFont(ofSize: 20)
-    $0.textColor = UIColor(red: 0.11, green: 0.18, blue: 0.26, alpha: 1.00)
+    $0.textColor = DSColors.blue.color
     return $0
   }(UILabel())
   
@@ -45,12 +45,9 @@ extension SectionView {
 private extension SectionView {
   
   func setupDigioCashTitle(title: String) {
-    let colorDigio = UIColor(red: 0.11, green: 0.18, blue: 0.26, alpha: 1.00)
-    let colorCash = UIColor(red: 0.43, green: 0.43, blue: 0.43, alpha: 1.00)
-    
     let attributedString = NSMutableAttributedString(string: title)
-    attributedString.setColorForText(textForAttribute: "digio", withColor: colorDigio)
-    attributedString.setColorForText(textForAttribute: "Cash", withColor: colorCash)
+    attributedString.setColorForText(textForAttribute: "digio", withColor: DSColors.blue.color)
+    attributedString.setColorForText(textForAttribute: "Cash", withColor: DSColors.gray.color)
     titleLabel.attributedText = attributedString
   }
   

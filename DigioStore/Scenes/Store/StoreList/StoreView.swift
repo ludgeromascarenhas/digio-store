@@ -27,7 +27,7 @@ final class StoreView: UIView {
   let emptyDataLabel: UILabel = {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.isHidden = true
-    $0.text = "Nenhum dado encontrado"
+    $0.text = DSStrings.emptyData
     $0.numberOfLines = 0
     $0.textAlignment = .center
     return $0

@@ -5,6 +5,7 @@ inhibit_all_warnings!
 def shared_pods
   use_frameworks!
   pod 'SwiftLint'
+  pod 'SwiftGen'
 end
 
 target 'DigioStore' do

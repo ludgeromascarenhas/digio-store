@@ -34,6 +34,12 @@
 		6DEF4C842922B7DC00B2A062 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF4C832922B7DC00B2A062 /* SectionView.swift */; };
 		6DEF4C882922F33E00B2A062 /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF4C872922F33E00B2A062 /* UICollectionViewCellExtensions.swift */; };
 		6DEF4C8A2922F98D00B2A062 /* NSMutableAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF4C892922F98D00B2A062 /* NSMutableAttributedStringExtensions.swift */; };
+		6DEF4C8D2922FE9E00B2A062 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF4C8C2922FE9E00B2A062 /* swiftgen.yml */; };
+		6DEF4C912922FF4700B2A062 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF4C902922FF4700B2A062 /* Localizable.strings */; };
+		6DEF4C94292301A600B2A062 /* DSStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF4C93292301A600B2A062 /* DSStrings.swift */; };
+		6DEF4C962923035900B2A062 /* DSAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF4C952923035900B2A062 /* DSAssets.swift */; };
+		6DEF4C98292303D000B2A062 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF4C97292303D000B2A062 /* Colors.txt */; };
+		6DEF4C9A2923060B00B2A062 /* DSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF4C992923060B00B2A062 /* DSColors.swift */; };
 		C2421201856A8F6D4487960F /* Pods_DigioStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D24747BE43B4C5F0FC4FD5 /* Pods_DigioStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +94,12 @@
 		6DEF4C832922B7DC00B2A062 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		6DEF4C872922F33E00B2A062 /* UICollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtensions.swift; sourceTree = "<group>"; };
 		6DEF4C892922F98D00B2A062 /* NSMutableAttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtensions.swift; sourceTree = "<group>"; };
+		6DEF4C8C2922FE9E00B2A062 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		6DEF4C902922FF4700B2A062 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		6DEF4C93292301A600B2A062 /* DSStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSStrings.swift; sourceTree = "<group>"; };
+		6DEF4C952923035900B2A062 /* DSAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSAssets.swift; sourceTree = "<group>"; };
+		6DEF4C97292303D000B2A062 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
+		6DEF4C992923060B00B2A062 /* DSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSColors.swift; sourceTree = "<group>"; };
 		7E84E958B56E07803554BA40 /* Pods-DigioStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStore.debug.xcconfig"; path = "Target Support Files/Pods-DigioStore/Pods-DigioStore.debug.xcconfig"; sourceTree = "<group>"; };
 		A6AD7974EB8E96C0BAE3AD36 /* Pods-DigioStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStoreTests.release.xcconfig"; path = "Target Support Files/Pods-DigioStoreTests/Pods-DigioStoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		E7537297166381F35A053D31 /* Pods-DigioStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStore.release.xcconfig"; path = "Target Support Files/Pods-DigioStore/Pods-DigioStore.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +152,7 @@
 		6D2223A6291EC5BE006A624C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				6DEF4C832922B7DC00B2A062 /* SectionView.swift */,
 				6D2223A7291EC5DA006A624C /* TableViewCell.swift */,
 				6D2223AD291F0519006A624C /* CollectionViewCell.swift */,
 			);
@@ -179,7 +192,6 @@
 			children = (
 				6D26D626291C76CA00527985 /* Info.plist */,
 				6DB7642F291B114E00156D1B /* AppDelegate.swift */,
-				6DB76438291B115000156D1B /* Assets.xcassets */,
 				6DB7643A291B115000156D1B /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
@@ -197,6 +209,7 @@
 		6DB76423291B114E00156D1B = {
 			isa = PBXGroup;
 			children = (
+				6DEF4C8C2922FE9E00B2A062 /* swiftgen.yml */,
 				6D26D624291C72E900527985 /* README.md */,
 				6DB7642E291B114E00156D1B /* DigioStore */,
 				6DB76445291B115100156D1B /* DigioStoreTests */,
@@ -223,6 +236,8 @@
 				6DEA487C291D970B00D847BB /* Scenes */,
 				6DEA487E291D977800D847BB /* Commons */,
 				6D792891291D2B2D00FF8E78 /* Network */,
+				6DEF4C8F2922FF1800B2A062 /* Resources */,
+				6DEF4C922923016300B2A062 /* SwiftGen */,
 				6D26D623291C717D00527985 /* SupportingFiles */,
 			);
 			path = DigioStore;
@@ -256,13 +271,8 @@
 		6DEA487D291D971500D847BB /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				6DEF4C9C2923090D00B2A062 /* StoreList */,
 				6D2223AF291F2354006A624C /* ProductDetails */,
-				6DEF4C822922B7C300B2A062 /* SectionView */,
-				6D2223A6291EC5BE006A624C /* Cells */,
-				6DEA4882291D97FF00D847BB /* StoreView.swift */,
-				6DB76433291B114E00156D1B /* StoreViewController.swift */,
-				6DEA4884291D99E700D847BB /* StoreViewModel.swift */,
-				6DEA4875291D6CE600D847BB /* StoreService.swift */,
 				6DEA4889291D9EBF00D847BB /* StoreCoordinator.swift */,
 			);
 			path = Store;
@@ -295,12 +305,36 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		6DEF4C822922B7C300B2A062 /* SectionView */ = {
+		6DEF4C8F2922FF1800B2A062 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6DEF4C832922B7DC00B2A062 /* SectionView.swift */,
+				6DB76438291B115000156D1B /* Assets.xcassets */,
+				6DEF4C902922FF4700B2A062 /* Localizable.strings */,
+				6DEF4C97292303D000B2A062 /* Colors.txt */,
 			);
-			path = SectionView;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6DEF4C922923016300B2A062 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				6DEF4C992923060B00B2A062 /* DSColors.swift */,
+				6DEF4C952923035900B2A062 /* DSAssets.swift */,
+				6DEF4C93292301A600B2A062 /* DSStrings.swift */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		6DEF4C9C2923090D00B2A062 /* StoreList */ = {
+			isa = PBXGroup;
+			children = (
+				6D2223A6291EC5BE006A624C /* Cells */,
+				6DEA4882291D97FF00D847BB /* StoreView.swift */,
+				6DB76433291B114E00156D1B /* StoreViewController.swift */,
+				6DEA4884291D99E700D847BB /* StoreViewModel.swift */,
+				6DEA4875291D6CE600D847BB /* StoreService.swift */,
+			);
+			path = StoreList;
 			sourceTree = "<group>";
 		};
 		DCB4BAD265CDD22663FA9B83 /* Pods */ = {
@@ -326,6 +360,7 @@
 				6DB76428291B114E00156D1B /* Sources */,
 				6DB76429291B114E00156D1B /* Frameworks */,
 				6DB7642A291B114E00156D1B /* Resources */,
+				6DEF4C8E2922FEE600B2A062 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -421,9 +456,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEF4C912922FF4700B2A062 /* Localizable.strings in Resources */,
 				6D26D625291C72E900527985 /* README.md in Resources */,
+				6DEF4C98292303D000B2A062 /* Colors.txt in Resources */,
 				6DB7643C291B115000156D1B /* LaunchScreen.storyboard in Resources */,
 				6DB76439291B115000156D1B /* Assets.xcassets in Resources */,
+				6DEF4C8D2922FE9E00B2A062 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +500,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		6DEF4C8E2922FEE600B2A062 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/SwiftGen/bin/swiftgen\"\n";
 		};
 		76D945923FCFDC7886EFE941 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -517,9 +573,12 @@
 				6D2223A8291EC5DA006A624C /* TableViewCell.swift in Sources */,
 				6DEA488A291D9EBF00D847BB /* StoreCoordinator.swift in Sources */,
 				6DEF4C842922B7DC00B2A062 /* SectionView.swift in Sources */,
+				6DEF4C962923035900B2A062 /* DSAssets.swift in Sources */,
 				6DEA4885291D99E700D847BB /* StoreViewModel.swift in Sources */,
 				6DEA487B291D920500D847BB /* BaseRequestProtocol.swift in Sources */,
+				6DEF4C94292301A600B2A062 /* DSStrings.swift in Sources */,
 				6DB76434291B114E00156D1B /* StoreViewController.swift in Sources */,
+				6DEF4C9A2923060B00B2A062 /* DSColors.swift in Sources */,
 				6D2223B4291F23C6006A624C /* ProductDetailsView.swift in Sources */,
 				6D2223B6291F2590006A624C /* ProductDetailsViewModel.swift in Sources */,
 				6D2223A5291EBCE8006A624C /* OverlayView.swift in Sources */,

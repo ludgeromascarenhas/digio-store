@@ -11,9 +11,7 @@ final class ProductDetailsView: UIView {
     return $0
   }(UIImageView())
   
-  private let descriptionView: UIView = {
-    return $0
-  }(UIView())
+  private let descriptionView = UIView()
   
   private let descriptionLabel: UILabel = {
     $0.translatesAutoresizingMaskIntoConstraints = false
@@ -27,6 +25,11 @@ final class ProductDetailsView: UIView {
     $0.spacing = 8
     return $0
   }(UIStackView())
+  
+  private let scrollView: UIScrollView = {
+    $0.translatesAutoresizingMaskIntoConstraints = false
+    return $0
+  }(UIScrollView())
   
   // MARK: - Initializers
   
@@ -57,23 +60,34 @@ private extension ProductDetailsView {
   func setupLayout() {
     backgroundColor = .white
     addComponents()
+    setupScrollViewConstraints()
     setupStackViewConstraints()
     setupDescriptionLabel()
     setupProductImageViewConstraint()
   }
   
   func addComponents() {
-    addSubview(stackView)
+    addSubview(scrollView)
+    scrollView.addSubview(stackView)
     descriptionView.addSubview(descriptionLabel)
     stackView.addArrangedSubview(productImageView)
     stackView.addArrangedSubview(descriptionView)
   }
   
+  func setupScrollViewConstraints() {
+    NSLayoutConstraint.activate([
+      scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+      scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
+      scrollView.leadingAnchor.constraint(equalTo: leadingAnchor)
+    ])
+  }
+  
   func setupStackViewConstraints() {
     NSLayoutConstraint.activate([
-      stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 64),
+      stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
       stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-      stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+      stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
       stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
     ])
   }

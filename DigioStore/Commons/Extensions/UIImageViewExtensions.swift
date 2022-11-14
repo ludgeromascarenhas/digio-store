@@ -13,7 +13,7 @@ extension UIImageView {
           }
         }
       } else {
-        let image = UIImage(imageLiteralResourceName: "notFound")
+        let image = DSAssets.notFound.image
         DispatchQueue.main.async {
           self?.image = image
         }

@@ -59,7 +59,7 @@ prohibited_interface_builder:
 
 line_length:
   warning: 300
-  error: 400
+  error: 1000000
   ignores_comments: true
   ignores_urls: true
   ignores_function_declarations: true
