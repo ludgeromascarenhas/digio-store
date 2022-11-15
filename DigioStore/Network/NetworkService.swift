@@ -18,6 +18,10 @@ class NetworkService: NetworkServiceProtocol {
   
   let urlSession: URLSession
   
+  // MARK: - Private variables
+  
+  private var acceptedStatusCodes: [Int] = Array(200..<300)
+  
   // MARK: - Initializer
   
   init(urlSession: URLSession = URLSession.shared) {
@@ -56,13 +60,19 @@ extension NetworkService {
   
   func dataTask(for request: URLRequest,
                 completion: @escaping ((Result<Data, ResponseError>) -> Void)) -> URLSessionDataTask? {
-    let task = urlSession.dataTask(with: request) { [weak self] (data, _, error)  in
+    let task = urlSession.dataTask(with: request) { [weak self] (data, taskResponse, error)  in
       guard let self = self else { return }
       if error != nil {
         let error = self.errorHandler(by: data)
         completion(.failure(error))
       }
+      
       if let data = data {
+        if let response = taskResponse as? HTTPURLResponse {
+          if !self.acceptedStatusCodes.contains(response.statusCode) {
+            completion(.failure(self.errorHandler(by: data)))
+          }
+        }
         completion(.success(data))
       }
     }
@@ -81,8 +91,7 @@ extension NetworkService {
   }
   
   func createGenericError() -> ResponseError {
-    return ResponseError(title: DSStrings.error,
-                         detail: DSStrings.somethingWrong)
+    return ResponseError(message: DSStrings.somethingWrong)
   }
   
   func errorHandler(by data: Data?) -> ResponseError {
@@ -91,14 +100,7 @@ extension NetworkService {
         let error = try JSONDecoder().decode(ResponseError.self, from: data)
         return error
       } catch {
-        do {
-          let notFoundError = try JSONDecoder().decode(ResponseNotFound.self, from: data)
-          let error = ResponseError(title: notFoundError.errors.first?.title ?? DSStrings.error,
-                                    detail: notFoundError.errors.first?.detail ?? DSStrings.parserError)
-          return error
-        } catch {
-          return createGenericError()
-        }
+        return createGenericError()
       }
     } else {
       return createGenericError()
@@ -109,10 +111,5 @@ extension NetworkService {
 // MARK: - Error Struct
 
 struct ResponseError: Decodable, Error {
-  let title: String
-  let detail: String
-}
-
-struct ResponseNotFound: Decodable, Error {
-  let errors: [ResponseError]
+  let message: String
 }

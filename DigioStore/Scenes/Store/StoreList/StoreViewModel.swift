@@ -5,7 +5,7 @@ import UIKit
 protocol StoreDelegate: class {
   func updateTableView()
   func showEmptyDataMessage()
-  func showErrorMessage()
+  func showErrorMessage(error: String)
 }
 
 // MARK: - StoreViewModelProtocol
@@ -22,8 +22,7 @@ protocol StoreViewModelProtocol: AnyObject {
 final class StoreViewModel: StoreViewModelProtocol {
   
   // MARK: - Internal varaibles
-  
-  var data: Store?
+
   var storeSections: [StoreSection] = []
   
   // MARK: - Private variables
@@ -49,13 +48,12 @@ extension StoreViewModel {
       switch result {
       case .success(let response):
         DispatchQueue.main.async {
-          self?.data = response
-          self?.handleData()
+          self?.handleData(data: response)
         }
       case .failure(let error):
-        self?.delegate?.showErrorMessage()
-        // TODO: remover
-        print(error)
+        DispatchQueue.main.async {
+          self?.delegate?.showErrorMessage(error: error.message)
+        }
       }
     }
   }
@@ -69,43 +67,42 @@ extension StoreViewModel {
 
 private extension StoreViewModel {
   
-  // TODO: refatorar
-  func handleData() {
+  func handleData(data: Store) {
     var storeItems: [Item] = []
     
-    if let data = data?.spotlight {
-      for spotlight in data {
-        let item = Item(title: spotlight.name,
-                        imageURL: spotlight.bannerURL,
-                        description: spotlight.description)
+    if let data = data.spotlight {
+      data.forEach { item in
+        let item = Item(title: item.name,
+                        imageURL: item.bannerURL,
+                        description: item.description)
         storeItems.append(item)
       }
       let section = StoreSection(key: .spotlight, value: storeItems)
-      storeSections.append(section)
+     storeSections.append(section)
     }
 
-    if let cash = data?.cash {
+    if let data = data.cash {
       storeItems = []
-      let item = Item(title: cash.title,
-                      imageURL: cash.bannerURL,
-                      description: cash.description)
+    let item = Item(title: data.title,
+                    imageURL: data.bannerURL,
+                    description: data.description)
       storeItems.append(item)
       let section = StoreSection(key: .cashDigio, value: storeItems)
       storeSections.append(section)
     }
-
-    if let products = data?.products {
+    
+    if let data = data.products {
       storeItems = []
-      for product in products {
-        let item = Item(title: product.name,
-                        imageURL: product.imageURL,
-                        description: product.description)
+      data.forEach { item in
+        let item = Item(title: item.name,
+                        imageURL: item.imageURL,
+                        description: item.description)
         storeItems.append(item)
       }
       let section = StoreSection(key: .products, value: storeItems)
       storeSections.append(section)
     }
-    
+  
     if storeSections.isEmpty {
       delegate?.showEmptyDataMessage()
     } else {
@@ -125,7 +122,6 @@ struct Item {
   let title: String?
   let imageURL: String?
   let description: String?
-  var image: UIImage?
 }
 
 enum StoreSectionType {

@@ -88,8 +88,8 @@ extension StoreViewController: UITableViewDelegate {}
 
 extension StoreViewController: StoreDelegate {
   
-  func showErrorMessage() {
-    customView.showError()
+  func showErrorMessage(error: String) {
+    customView.showError(error: error)
   }
   
   func showEmptyDataMessage() {

@@ -24,7 +24,7 @@ final class StoreView: UIView {
     return $0
   }(OverlayView(style: .solid))
   
-  let emptyDataLabel: UILabel = {
+  let warningLabel: UILabel = {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.isHidden = true
     $0.text = DSStrings.emptyData
@@ -52,25 +52,26 @@ extension StoreView {
   func showLoading() {
     tableView.isHidden = true
     overlayView.isHidden = false
-    emptyDataLabel.isHidden = true
+    warningLabel.isHidden = true
   }
   
-  func showError() {
-    tableView.isHidden = true
+  func showError(error: String) {
+    tableView.isHidden = false
     overlayView.isHidden = true
-    emptyDataLabel.isHidden = true
+    warningLabel.isHidden = false
+    warningLabel.text = error
   }
   
   func showTableView() {
     tableView.isHidden = false
     overlayView.isHidden = true
-    emptyDataLabel.isHidden = true
+    warningLabel.isHidden = true
   }
   
   func showNoData() {
     overlayView.isHidden = true
     tableView.isHidden = false
-    emptyDataLabel.isHidden = false
+    warningLabel.isHidden = false
   }
 }
 
@@ -83,13 +84,13 @@ private extension StoreView {
     addComponents()
     setupTableViewContraints()
     setupOverlayViewConstraints()
-    setupEmptyDataLabelConstraints()
+    setupWarningLabelConstraints()
   }
   
   func addComponents() {
     addSubview(tableView)
     addSubview(overlayView)
-    tableView.addSubview(emptyDataLabel)
+    tableView.addSubview(warningLabel)
   }
   
   func setupTableViewContraints() {
@@ -110,11 +111,11 @@ private extension StoreView {
     ])
   }
   
-  func setupEmptyDataLabelConstraints() {
+  func setupWarningLabelConstraints() {
     NSLayoutConstraint.activate([
-      emptyDataLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
-      emptyDataLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-      emptyDataLabel.leadingAnchor.constraint(equalTo: leadingAnchor)
+      warningLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
+      warningLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+      warningLabel.leadingAnchor.constraint(equalTo: leadingAnchor)
     ])
   }
 }
