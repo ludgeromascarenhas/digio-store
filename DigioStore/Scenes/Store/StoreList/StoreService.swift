@@ -38,7 +38,7 @@ struct TesteRequest: BaseRequestProtocol {
   var path: String
   
   init() {
-    path = "https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/sandbox/products/MArquinhos"
+    path = "https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/sandbox/products"
     method = .get
   }
 }
