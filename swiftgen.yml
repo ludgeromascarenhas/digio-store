@@ -1,0 +1,23 @@
+strings:
+- inputs: DigioStore/Resources/Localizable.strings
+  outputs:
+    templateName: flat-swift4
+    output: DigioStore/SwiftGen/DSStrings.swift
+    params:
+       enumName: DSStrings
+       
+colors:
+ - inputs: DigioStore/Resources/Colors.txt
+   outputs:
+     templateName: swift4
+     output: DigioStore/SwiftGen/DSColors.swift
+     params:
+       enumName: DSColors
+       
+xcassets:
+- inputs: DigioStore/Resources/Assets.xcassets
+  outputs:
+    templateName: swift4
+    output: DigioStore/SwiftGen/DSAssets.swift
+    params:
+      enumName: DSAssets
