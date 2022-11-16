@@ -4,6 +4,7 @@ import UIKit
 
 protocol ProductDetailsViewModelProtocol: AnyObject {
   var item: Item { get }
+
 }
 
 // MARK: - ProductDetailsViewModel

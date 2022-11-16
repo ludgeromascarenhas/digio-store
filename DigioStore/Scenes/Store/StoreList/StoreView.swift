@@ -22,7 +22,7 @@ final class StoreView: UIView {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.isHidden = true
     return $0
-  }(OverlayView(style: .solid))
+  }(OverlayView())
   
   let warningLabel: UILabel = {
     $0.translatesAutoresizingMaskIntoConstraints = false

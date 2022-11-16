@@ -52,6 +52,7 @@ extension StoreViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    if section >= viewModel.storeSections.count { return nil }
     let section = viewModel.storeSections[section]
     
     switch section.key {
@@ -71,12 +72,9 @@ extension StoreViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let section = indexPath.section
     if section == 0 {
-      return  200
-    } else if section == 1 {
-      return 120
-    } else {
-      return 120
+      return 200
     }
+    return 120
   }
 }
 

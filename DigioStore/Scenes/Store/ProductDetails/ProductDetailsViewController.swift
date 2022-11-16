@@ -19,7 +19,8 @@ final class ProductDetailsViewController: BaseViewController<ProductDetailsView>
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setValues()
+    setTitle()
+    configureCustomView()
   }
 }
 
@@ -27,9 +28,13 @@ final class ProductDetailsViewController: BaseViewController<ProductDetailsView>
 
 extension ProductDetailsViewController {
   
-  func setValues() {
+  func setTitle() {
     let item = viewModel.item
     title = item.title
+  }
+  
+  func configureCustomView() {
+    let item = viewModel.item
     guard
       let urlString = item.imageURL,
       let url = URL(string: urlString),

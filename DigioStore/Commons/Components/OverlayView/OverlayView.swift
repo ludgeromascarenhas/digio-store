@@ -1,28 +1,9 @@
-//
-//  OverlayView.swift
-//  DigioStore
-//
-//  Created by Ludgero Mascarenhas on 11/11/22.
-//
-
 import UIKit
 
 // MARK: - OverlayView
 
 final class OverlayView: UIView {
-  
-  // MARK: - Public variables
-  
-  public enum Style {
-    case solid, transparent
-  }
-  
-  public var overlayStyle: Style = .solid {
-    didSet {
-      updateLayout()
-    }
-  }
-  
+
   // MARK: - Private variables
   
   let indicator: UIActivityIndicatorView = {
@@ -33,10 +14,9 @@ final class OverlayView: UIView {
   
   // MARK: - Initializers
   
-  init(style: Style) {
+  init() {
     super.init(frame: .zero)
     setupLayout()
-    overlayStyle = style
   }
   
   required init?(coder: NSCoder) {
@@ -48,17 +28,8 @@ final class OverlayView: UIView {
 
 private extension OverlayView{
   
-  func updateLayout() {
-    switch overlayStyle {
-    case .solid:
-      backgroundColor = .white
-      
-    case .transparent:
-      backgroundColor = UIColor.black.withAlphaComponent(0.5)
-    }
-  }
-  
   func setupLayout() {
+    backgroundColor = .white
     addComponents()
     setupIndicatiorConstraints()
   }

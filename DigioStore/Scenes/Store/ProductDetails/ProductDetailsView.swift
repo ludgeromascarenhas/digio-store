@@ -6,14 +6,14 @@ final class ProductDetailsView: UIView {
   
   // MARK: - Private variables
   
-  private let productImageView: UIImageView = {
+  let productImageView: UIImageView = {
     $0.contentMode = .scaleAspectFit
     return $0
   }(UIImageView())
   
   private let descriptionView = UIView()
   
-  private let descriptionLabel: UILabel = {
+  let descriptionLabel: UILabel = {
     $0.translatesAutoresizingMaskIntoConstraints = false
     $0.numberOfLines = 0
     return $0
